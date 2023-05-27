@@ -23,7 +23,7 @@ The code of Visual-semantic Consistency: A Mutual-reinforcing 3D Multi-modal Ima
   * Put T1 modal model volume patches in '/dataset/training/t1' and '/dataset/validation/t1'<br>
   * Put T2-Flair model volume patches in '/dataset/training/t2-flair' and '/dataset/validation/t2-flair'<br>
   * Put Label volume patches into '/dataset/training/label' and '/dataset/validation/label' for train and valid<br>
-* Adjust ```DualSwinAE_model_ptah``` in ```train.py``` to the path where you store the model in task #1.<br>
+* Adjust ```DualSwinAE_model_ptah``` in ```train.py``` to the path where you store the model in Stage #1.<br>
 * Run ```CUDA_VISIBLE_DEVICES=0 python tarin.py```<br>
 # Test:<br>
 * Prepare test data: put the processed data in './test_img'<br>
