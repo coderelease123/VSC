@@ -28,9 +28,6 @@ def GaussianBlur(img):
 
 
 def fourier_broken(patch, num, nb_rows, nb_cols):
-    """
-    window内的傅里叶变换
-    """
     img_recon = np.empty((num, nb_rows, nb_cols))
     for i in range(num):
         x = patch[i]
