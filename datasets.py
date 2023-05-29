@@ -9,7 +9,7 @@ from glob import glob
 from torchvision import transforms
 from utils import mkdir, read_img, augment_img, mask2one_hot, preprocess
 from utils import get_image_paths
-from imgaug import augmenters as iaa  # 引入数据增强的包
+from imgaug import augmenters as iaa
 import torchio as tio
 np.random.seed(0)
 
@@ -31,16 +31,16 @@ def fourier_broken(patch, num, nb_rows, nb_cols):
     img_recon = np.empty((num, nb_rows, nb_cols))
     for i in range(num):
         x = patch[i]
-        aug_a = iaa.GaussianBlur(sigma=0.5)  # 高斯模糊
+        aug_a = iaa.GaussianBlur(sigma=0.5)
         aug_p = iaa.Jigsaw(nb_rows=nb_rows, nb_cols=nb_cols, max_steps=(1, 5))
         fre = np.fft.fft2(x)
-        fre_a = np.abs(fre)  # 振幅
-        fre_p = np.angle(fre)  # 相位
-        fre_a_normalize = fre_a / (np.max(fre_a) + 0.0001)  # 振幅归一化
+        fre_a = np.abs(fre)
+        fre_p = np.angle(fre)
+        fre_a_normalize = fre_a / (np.max(fre_a) + 0.0001)
         fre_p_normalize = fre_p
         fre_a_trans = aug_a(image=fre_a_normalize)
         fre_p_trans = aug_p(image=fre_p_normalize)
-        fre_a_trans = fre_a_trans * (np.max(fre_a) + 0.0001)  # 增强后还原
+        fre_a_trans = fre_a_trans * (np.max(fre_a) + 0.0001)
         fre_p_trans = fre_p_trans
         fre_recon = fre_a_trans * np.e ** (1j * fre_p_trans)
         img_recon[i, :, :] = np.abs(np.fft.ifft2(fre_recon))
