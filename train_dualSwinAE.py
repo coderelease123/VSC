@@ -72,7 +72,7 @@ if __name__ == '__main__':
     # ==================
 
     train_dataset = AEDataset(io, args.root+'training', transform=True, ssl_transform=args.ssl_transform, partition='train')
-    val_dataset = AEDataset(io, args.root+'validation', transform=False, ssl_transform=args.ssl_transform, partition='train')
+    val_dataset = AEDataset(io, args.root+'validation', transform=True, ssl_transform=args.ssl_transform, partition='val')
 
     # Creating data indices for training and validation splits:
     train_indices = train_dataset.train_ind
