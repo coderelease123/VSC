@@ -185,11 +185,6 @@ class IntensityLoss(nn.Module):
 
 
 class SegmentationLoss(nn.Module):
-    """
-    the input and target size is [5, 32, 128, 128],
-    should change it when change the size
-    """
-
     def __init__(self):
         super(SegmentationLoss, self).__init__()
 
