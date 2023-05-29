@@ -43,7 +43,6 @@ class ConvBlock(nn.Module):
 class FusionNet(nn.Module):
     """
     using Residual connection
-    上一层的输入作为下一层的输入
     """
     def __init__(self):
         super(FusionNet, self).__init__()
