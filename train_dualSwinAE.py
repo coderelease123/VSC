@@ -40,7 +40,7 @@ if __name__ == '__main__':
     parser.add_argument('--summary_name', type=str, default='Semantic_Fusion_', help='Name of the tensorboard summary')
 
     args = parser.parse_args()
-    writer = SummaryWriter('./runs/SemanticFusion')  # 为你的存储日志命名
+    writer = SummaryWriter('./runs/SemanticFusion')
 
     io = log.IOStream(args)
     io.cprint(str(args))
@@ -182,7 +182,7 @@ if __name__ == '__main__':
                 writer.add_image('Train/image_shuffling2', image_shuffling2[8], epoch, dataformats='HW')
 
         learning_rate = optimizer.state_dict()['param_groups'][0]['lr']
-        io.cprint(f"Epoch:[{epoch:d}/{args.epoch:d}]-----learning rate: {learning_rate:.10f}")  # 学习率的小数点位数要多一点
+        io.cprint(f"Epoch:[{epoch:d}/{args.epoch:d}]-----learning rate: {learning_rate:.10f}")
         io.cprint(
             f'Epoch:[{epoch:d}/{args.epoch:d}]-----Train------LOSS:{(total_loss_per_epoch / (len(train_loader))):.4f}')
         writer.add_scalar('Train/feat_loss_blur', feat_loss_blur_per_epoch / (len(train_loader)), epoch)
