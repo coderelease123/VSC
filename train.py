@@ -241,7 +241,6 @@ if __name__ == '__main__':
             optimizer.step()
 
         learning_rate = optimizer.state_dict()['param_groups'][0]['lr']
-        # 学习率的小数点位数要多一点
         io.cprint(f"Epoch:[{epoch:d}/{args.epoch:d}]-----learning rate: {learning_rate:.10f}")
         io.cprint(
             f'Epoch:[{epoch:d}/{args.epoch:d}]-----Train-----LOSS:{(Loss_per_epoch / (len(train_loader))):.4f}')
