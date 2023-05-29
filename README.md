@@ -29,6 +29,13 @@ The code of Visual-semantic Consistency: A Mutual-reinforcing 3D Multi-modal Ima
 * Prepare test data: put the processed data in './test_img'<br>
 * Run ```CUDA_VISIBLE_DEVICES=0 python test.py```<br>
 ▢ This task is based on Stage #1, so the code and models in Stage #1 should be downloaded and prepared in advance.<br>
-<br>
-## Results of visual fusion on clean data<br>
-![image](https://github.com/coderelease123/VSC/assets/Qualitative results of visual fusion.png)
+## Results of visual fusion<br>
+* on clean data <br>
+<img src="https://github.com/coderelease123/VSC/blob/main/assets/Qualitative%20results%20of%20visual%20fusion.png" /> <br>
+* on degraded data <br>
+<img src="https://github.com/coderelease123/VSC/blob/main/assets/Qualitative%20results%20of%20visual%20fusion%20on%20degraded%20data.png" /> <br>
+## Results of lesion segmentation<br>
+* on clean data <br>
+<img src="https://github.com/coderelease123/VSC/blob/main/assets/Qualitative%20results%20of%20lesion%20segmentation.png" /> <br>
+* on degraded data <br>
+<img src="https://github.com/coderelease123/VSC/blob/main/assets/Qualitative%20results%20of%20lesion%20segmentation%20on%20degraded%20data.png" /> <br>
