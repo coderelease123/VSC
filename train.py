@@ -266,7 +266,6 @@ if __name__ == '__main__':
             Loss_per_epoch = 0.
             Loss_grad_per_epoch = 0.
             Loss_int_per_epoch = 0.
-            # Loss_per_per_epoch = 0.
             Loss_seg_per_epoch = 0.
             for index, image in enumerate(val_loader):
                 img1 = image[0].to(device)  # T1
@@ -321,7 +320,6 @@ if __name__ == '__main__':
         if seg_loss > best_dice:
             best_dice = seg_loss
             best_epoch = epoch
-            # save best model
             state = {
                 'optimizer': optimizer.state_dict(),
                 'model': model.state_dict(),
@@ -335,7 +333,7 @@ if __name__ == '__main__':
             }
             mkdir(os.path.join(save_path, './Segmentation'))
             torch.save(state1, os.path.join(save_path, './Segmentation/model.pth'))
-            io.cprint(f'save the new best epoch at epoch:{best_epoch} and the best dice is {best_dice:.4f}!!!')
+            io.cprint(f'save the new dice at epoch:{best_epoch} and the best dice is {best_dice:.4f}!!!')
 
         # ==================
         # Model Saving
